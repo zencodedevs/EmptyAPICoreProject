@@ -64,15 +64,19 @@ namespace ZenAchitecture.Infrastructure
 
             services.AddIdentityServer(option =>
             {
+
                 option.IssuerUri = issuerUri;
+
             })
             .AddApiAuthorization<ApplicationUser, ApplicationDbContext>(option =>
             {
+
                 foreach (var client in option.Clients)
                 {
                     client.AllowOfflineAccess = true;
                     client.UpdateAccessTokenClaimsOnRefresh = true;
                     client.AccessTokenLifetime = 3600; // seconds / 1 hour
+
                 }
             })
             .AddProfileService<ProfileService>();
