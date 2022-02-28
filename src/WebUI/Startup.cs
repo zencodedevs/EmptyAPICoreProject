@@ -61,7 +61,7 @@ namespace ZenAchitecture.WebUI
             //set nlog inster clause variable
             LogManager.Configuration.Variables["registerClause"] = Constants.Nlog.WebUiDbRegisterClause;
 
-          
+
             services.AddDomain();
             services.AddApplication(Configuration);
             services.AddInfrastructure(Configuration);
@@ -156,17 +156,17 @@ namespace ZenAchitecture.WebUI
                 options.SubstituteApiVersionInUrl = true;
             });
 
- 
+
             services.AddMvc()
-                .AddRazorRuntimeCompilation()
-                .AddJsonOptions(options =>
-                    {
-                        options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
-                        options.JsonSerializerOptions.IgnoreNullValues = false;
+            .AddRazorRuntimeCompilation()
+            .AddJsonOptions(options =>
+                {
+                    options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+                    options.JsonSerializerOptions.IgnoreNullValues = false;
 
-                    });
+                });
 
-            
+
 
         }
 
@@ -200,13 +200,13 @@ namespace ZenAchitecture.WebUI
             }
 
 
-            app.UseSwaggerUi3( settings =>
-            {
-                settings.Path = "/api";
-                settings.DocumentPath = "/api/specification.json";
-                settings.DocExpansion = "list";
+            app.UseSwaggerUi3(settings =>
+           {
+               settings.Path = "/api";
+               settings.DocumentPath = "/api/specification.json";
+               settings.DocExpansion = "list";
 
-            });
+           });
 
             app.UseOpenApi(options =>
             {
