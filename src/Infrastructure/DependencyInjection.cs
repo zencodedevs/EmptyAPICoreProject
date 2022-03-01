@@ -13,9 +13,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Zen.Bog.Ecommerce;
 using Zen.EventProcessor;
-using Zen.Infrastructure;
 using Zen.Infrastructure.Interfaces;
-using Zen.MultiTenancy;
 
 namespace ZenAchitecture.Infrastructure
 {
@@ -30,20 +28,15 @@ namespace ZenAchitecture.Infrastructure
             }
             else
             {
-
                 services.AddDbContext<ApplicationDbContext>(options =>
-               options.UseSqlServer(
-                   configuration.GetConnectionString("DefaultConnection"),
-                   b => b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
+                   options.UseSqlServer(
+                       configuration.GetConnectionString("DefaultConnection"),
+                       b => b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
             }
-
 
             services.AddZenEventProcessor();
             services.AddZenBogEcommerce(configuration);
-
             services.AddScoped<IAppDbContext>(provider => provider.GetService<ApplicationDbContext>());
-
-
 
             services
                 .AddDefaultIdentity<ApplicationUser>(options =>
@@ -60,27 +53,22 @@ namespace ZenAchitecture.Infrastructure
                 .AddErrorDescriber<CustomIdentityErrorDescriber>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
-            var issuerUri = configuration.GetSection("EndPoints")["WebsiteURL"];
+            var issuerUri = configuration.GetSection("EndPoints")["AuthorityUrl"];
 
             services.AddIdentityServer(option =>
             {
-
                 option.IssuerUri = issuerUri;
-
             })
             .AddApiAuthorization<ApplicationUser, ApplicationDbContext>(option =>
             {
-
                 foreach (var client in option.Clients)
                 {
                     client.AllowOfflineAccess = true;
                     client.UpdateAccessTokenClaimsOnRefresh = true;
                     client.AccessTokenLifetime = 3600; // seconds / 1 hour
-
                 }
             })
             .AddProfileService<ProfileService>();
-
 
             services.AddTransient<IDateTime, DateTimeService>();
             services.AddTransient<IIdentityService, IdentityService>();
@@ -95,12 +83,9 @@ namespace ZenAchitecture.Infrastructure
                             options.Authority = issuerUri;
                         });
 
-
             services.AddAuthorization(options =>
             {
                 options.AddPolicy("CanPurge", policy => policy.RequireRole("Administrator"));
-
-
             });
 
             return services;

@@ -25,7 +25,6 @@ using Microsoft.FeatureManagement;
 using NLog;
 using NSwag;
 using NSwag.Generation.Processors.Security;
-using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -89,11 +88,6 @@ namespace ZenAchitecture.WebUI
                 options.SuppressModelStateInvalidFilter = true;
             });
 
-            // In production, the Angular files will be served from this directory
-            services.AddSpaStaticFiles(configuration =>
-            {
-                configuration.RootPath = "ClientApp/dist";
-            });
 
             services.AddAuthorization(options =>
             {
@@ -189,24 +183,20 @@ namespace ZenAchitecture.WebUI
                 app.UseHsts();
             }
 
+
             app.UseHealthChecks("/health");
 
             app.UseHttpsRedirection();
 
             app.UseStaticFiles();
-            if (!env.IsDevelopment())
-            {
-                app.UseSpaStaticFiles();
-            }
-
 
             app.UseSwaggerUi3(settings =>
-           {
-               settings.Path = "/api";
-               settings.DocumentPath = "/api/specification.json";
-               settings.DocExpansion = "list";
+               {
+                   settings.Path = "/api";
+                   settings.DocumentPath = "/api/specification.json";
+                   settings.DocExpansion = "list";
 
-           });
+               });
 
             app.UseOpenApi(options =>
             {

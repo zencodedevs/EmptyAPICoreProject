@@ -1,18 +1,19 @@
 ﻿using Microsoft.AspNetCore.ApiAuthorization.IdentityServer;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System.Text.Json;
 
 namespace ZenAchitecture.WebUI.Controllers
 {
     [ApiExplorerSettings(IgnoreApi = true)]
     public class OidcConfigurationController : Controller
     {
-        private readonly ILogger<OidcConfigurationController> logger;
+        private readonly ILogger<OidcConfigurationController> _logger;
 
-        public OidcConfigurationController(IClientRequestParametersProvider clientRequestParametersProvider, ILogger<OidcConfigurationController> _logger)
+        public OidcConfigurationController(IClientRequestParametersProvider clientRequestParametersProvider, ILogger<OidcConfigurationController> logger)
         {
+            _logger = logger;
             ClientRequestParametersProvider = clientRequestParametersProvider;
-            logger = _logger;
         }
 
         public IClientRequestParametersProvider ClientRequestParametersProvider { get; }
@@ -21,6 +22,10 @@ namespace ZenAchitecture.WebUI.Controllers
         public IActionResult GetClientRequestParameters([FromRoute] string clientId)
         {
             var parameters = ClientRequestParametersProvider.GetClientParameters(HttpContext, clientId);
+
+            var json = JsonSerializer.Serialize(parameters);
+
+            _logger.LogInformation("Serialize json {json}", json);
 
             return Ok(parameters);
         }
