@@ -53,7 +53,7 @@ namespace ZenAchitecture.Infrastructure
                 .AddErrorDescriber<CustomIdentityErrorDescriber>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
-            var issuerUri = configuration.GetSection("EndPoints")["AuthorityUrl"];
+            var issuerUri = configuration.GetSection("IdentityServer")["AuthorityUrl"];
 
             services.AddIdentityServer(option =>
             {
@@ -61,6 +61,13 @@ namespace ZenAchitecture.Infrastructure
             })
             .AddApiAuthorization<ApplicationUser, ApplicationDbContext>(option =>
             {
+                // msdn https://docs.microsoft.com/en-us/aspnet/core/security/authentication/identity-api-authorization?view=aspnetcore-6.0
+                option.Clients.AddSPA(
+                     configuration.GetSection("IdentityServer")["ClientId"], spa => spa
+                            .WithRedirectUri(configuration.GetSection("IdentityServer")["LoginCallbackUrl"])
+                            .WithLogoutRedirectUri(configuration.GetSection("IdentityServer")["LogoutCallbackUrl"])
+                        );
+
                 foreach (var client in option.Clients)
                 {
                     client.AllowOfflineAccess = true;

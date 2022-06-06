@@ -125,13 +125,13 @@ namespace ZenAchitecture.WebUI
             services.AddSingleton<IStringLocalizer, JsonStringLocalizer>();
             CultureInfo.CurrentCulture = new CultureInfo(Constants.SystemCultureNames.Georgian);
 
-            // TO DO
             services.AddCors(options =>
             {
                 options.AddPolicy("CorsPolicy",
                     builder => builder.AllowAnyOrigin()
                         .AllowAnyMethod()
-                        .AllowAnyHeader());
+                        .AllowAnyHeader()
+                        .WithOrigins(Configuration.GetSection("CorsPolicy:WithOrigins").Get<string[]>()));
             });
 
             ////
