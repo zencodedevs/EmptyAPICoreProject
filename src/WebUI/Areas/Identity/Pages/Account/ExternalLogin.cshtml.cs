@@ -13,7 +13,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
-using ZenAchitecture.Domain.Entities;
+using ZenAchitecture.Domain.Shared.Entities;
 
 namespace ZenAchitecture.WebUIAdmin.Areas.Identity.Pages.Account
 {

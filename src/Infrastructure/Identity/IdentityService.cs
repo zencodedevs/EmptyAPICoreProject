@@ -1,5 +1,5 @@
 ﻿using ZenAchitecture.Domain.Common.Models;
-using ZenAchitecture.Domain.Entities;
+using ZenAchitecture.Domain.Shared.Entities;
 using ZenAchitecture.Domain.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;

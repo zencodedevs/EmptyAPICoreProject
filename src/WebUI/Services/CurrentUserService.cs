@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using System.Security.Claims;
 using ZenAchitecture.Domain.Interfaces;
+using ZenAchitecture.Domain.Shared.Interfaces;
 
 namespace ZenAchitecture.WebUI.Services
 {

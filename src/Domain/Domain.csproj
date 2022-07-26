@@ -17,11 +17,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Domain.Shared\Domain.Shared.csproj" />
+    <Folder Include="Common\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Common\" />
+    <ProjectReference Include="..\Domain.Shared\Domain.Shared.csproj" />
   </ItemGroup>
 
 </Project>

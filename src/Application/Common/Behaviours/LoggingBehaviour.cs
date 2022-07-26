@@ -4,6 +4,7 @@ using MediatR.Pipeline;
 using Microsoft.Extensions.Logging;
 using System.Threading;
 using System.Threading.Tasks;
+using ZenAchitecture.Domain.Shared.Interfaces;
 
 namespace ZenAchitecture.Application.Common.Behaviours
 {

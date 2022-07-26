@@ -1,7 +1,4 @@
-using ZenAchitecture.Domain.Entities;
 using ZenAchitecture.Infrastructure.Persistence;
-using ZenAchitecture.WebUI.Extensions;
-using ZenAchitecture.WebUI.Services;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -10,9 +7,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using NLog.Web;
-using Quartz;
 using System;
 using System.Threading.Tasks;
+using ZenAchitecture.Infrastructure.Shared.Persistence;
+using ZenAchitecture.Domain.Shared.Entities;
 
 namespace ZenAchitecture.WebUI
 {

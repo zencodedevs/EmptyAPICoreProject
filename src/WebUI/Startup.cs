@@ -1,10 +1,6 @@
-using Askmethat.Aspnet.JsonLocalizer.Localizer;
 using ZenAchitecture.Application;
-using ZenAchitecture.Application.Common.Localization;
 using ZenAchitecture.Domain;
-using ZenAchitecture.Domain.Common;
 using ZenAchitecture.Infrastructure;
-using ZenAchitecture.Infrastructure.Persistence;
 using ZenAchitecture.WebUI.CurrentTenantMiddlewares;
 using ZenAchitecture.WebUI.Filters;
 using ZenAchitecture.WebUI.Middlewares;
@@ -19,7 +15,6 @@ using Microsoft.AspNetCore.Mvc.Versioning;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Localization;
 using Microsoft.Extensions.Options;
 using Microsoft.FeatureManagement;
 using NLog;
@@ -29,6 +24,8 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Text.Json.Serialization;
+using ZenAchitecture.Infrastructure.Shared.Persistence;
+using ZenAchitecture.Domain.Shared.Common;
 
 namespace ZenAchitecture.WebUI
 {

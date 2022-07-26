@@ -8,7 +8,6 @@ namespace ZenAchitecture.Domain
     {
         public static IServiceCollection AddDomain(this IServiceCollection services)
         {
-
             services.AddDomainShared();
 
             return services;

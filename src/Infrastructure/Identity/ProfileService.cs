@@ -1,4 +1,4 @@
-﻿using ZenAchitecture.Domain.Entities;
+﻿using ZenAchitecture.Domain.Shared.Entities;
 using IdentityServer4.Models;
 using IdentityServer4.Services;
 using Microsoft.AspNetCore.Identity;

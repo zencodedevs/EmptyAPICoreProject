@@ -3,7 +3,7 @@ using FluentValidation;
 using System.Threading.Tasks;
 using Zen.Domain.Interfaces;
 using Microsoft.Extensions.Localization;
-using ZenAchitecture.Domain.Entities.Geography;
+using ZenAchitecture.Domain.Shared.Entities.Geography;
 using ZenAchitecture.Application.Account.Cities.Commands;
 using ZenAchitecture.Application.Common.Validator;
 using Microsoft.Extensions.DependencyInjection;

@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using ZenAchitecture.Domain.Entities.Geography;
+using ZenAchitecture.Domain.Shared.Entities.Geography;
 using Zen.Application.Mappings;
 
 namespace ZenAchitecture.Application.Account.Cities.Dtos

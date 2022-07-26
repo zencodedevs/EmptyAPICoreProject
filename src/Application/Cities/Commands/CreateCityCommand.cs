@@ -1,4 +1,4 @@
-﻿using ZenAchitecture.Domain.Entities.Geography;
+﻿using ZenAchitecture.Domain.Shared.Entities.Geography;
 using MediatR;
 using System.Threading;
 using System.Threading.Tasks;

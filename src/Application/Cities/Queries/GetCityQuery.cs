@@ -3,7 +3,7 @@ using AutoMapper;
 using System.Threading;
 using Zen.Domain.Interfaces;
 using System.Threading.Tasks;
-using ZenAchitecture.Domain.Entities.Geography;
+using ZenAchitecture.Domain.Shared.Entities.Geography;
 using ZenAchitecture.Application.Account.Cities.Dtos;
 
 namespace ZenAchitecture.Application.Account.Cities.Queries

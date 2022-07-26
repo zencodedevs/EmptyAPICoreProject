@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using System.Globalization;
 using System.Threading.Tasks;
+using ZenAchitecture.Domain.Shared.Common;
 
 namespace ZenAchitecture.WebUI.Middlewares
 {

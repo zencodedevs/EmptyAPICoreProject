@@ -1,9 +1,9 @@
 ﻿
-using ZenAchitecture.Domain.Entities;
+using ZenAchitecture.Domain.Shared.Entities;
 using ZenAchitecture.Domain.Interfaces;
 using ZenAchitecture.Infrastructure.Identity;
 using ZenAchitecture.Infrastructure.Persistence;
-using ZenAchitecture.Infrastructure.Services;
+using ZenAchitecture.Infrastructure.Shared.Services;
 using Microsoft.AspNetCore.ApiAuthorization.IdentityServer;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -13,6 +13,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Zen.Bog.Ecommerce;
 using Zen.Infrastructure.Interfaces;
 using Infrastructure.Shared;
+using ZenAchitecture.Infrastructure.Shared.Persistence;
+using ZenAchitecture.Domain.Shared.Interfaces;
 
 namespace ZenAchitecture.Infrastructure
 {

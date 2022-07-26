@@ -8,6 +8,7 @@ using System.Linq;
 using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
+using ZenAchitecture.Domain.Shared.Interfaces;
 
 namespace ZenAchitecture.Application.Common.Behaviours
 {

@@ -1,8 +1,9 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
-using ZenAchitecture.Domain.Entities;
-using ZenAchitecture.Domain.Entities.Geography;
+using ZenAchitecture.Domain.Shared.Entities;
+using ZenAchitecture.Domain.Shared.Entities.Geography;
+using ZenAchitecture.Infrastructure.Shared.Persistence;
 
 namespace ZenAchitecture.Infrastructure.Persistence
 {

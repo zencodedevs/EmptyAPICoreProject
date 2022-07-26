@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ZenAchitecture.Infrastructure.Persistence;
+using ZenAchitecture.Infrastructure.Shared.Persistence;
 
 namespace ZenAchitecture.Infrastructure.Migrations
 {

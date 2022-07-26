@@ -4,6 +4,7 @@
     using NSwag;
     using NSwag.Generation.Processors;
     using NSwag.Generation.Processors.Contexts;
+    using ZenAchitecture.Domain.Shared.Common;
 
     public class SysLanguageHeaderOperationProcessor : IOperationProcessor
     {
