@@ -17,10 +17,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Common\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Domain.Shared\Domain.Shared.csproj" />
   </ItemGroup>
 
