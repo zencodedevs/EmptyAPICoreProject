@@ -8,12 +8,11 @@ using Microsoft.AspNetCore.ApiAuthorization.IdentityServer;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Zen.Bog.Ecommerce;
-using Zen.EventProcessor;
 using Zen.Infrastructure.Interfaces;
+using Infrastructure.Shared;
 
 namespace ZenAchitecture.Infrastructure
 {
@@ -21,21 +20,11 @@ namespace ZenAchitecture.Infrastructure
     {
         public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
         {
-            if (configuration.GetValue<bool>("UseInMemoryDatabase"))
-            {
-                services.AddDbContext<ApplicationDbContext>(options =>
-                    options.UseInMemoryDatabase("ZenAchitecture"));
-            }
-            else
-            {
-                services.AddDbContext<ApplicationDbContext>(options =>
-                   options.UseSqlServer(
-                       configuration.GetConnectionString("DefaultConnection"),
-                       b => b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
-            }
 
-            services.AddZenEventProcessor();
+            services.AddInfrastructureShared(configuration);
+            
             services.AddZenBogEcommerce(configuration);
+
             services.AddScoped<IAppDbContext>(provider => provider.GetService<ApplicationDbContext>());
 
             services

@@ -46,8 +46,15 @@ namespace ZenAchitecture.Domain.Common
         {
             //sql server signature
             public const string WebUiDbRegisterClause = "insert into  Logs([When],[Message],[Level],[Exception],[Trace],[Logger],[Channel])VALUES (getdate(),@msg,@level,@exception,@trace,@logger,'WebUI')";
+            public const string WorkerDbRegisterClause = "insert into  Logs([When],[Message],[Level],[Exception],[Trace],[Logger],[Channel])VALUES (getdate(),@msg,@level,@exception,@trace,@logger,'ServiceWorker')";
         }
-
+        public struct ServiceWorkerUser
+        {
+            public const string Id = "2EDDCB1E-AC1D-4A78-BE9C-DE5CDEA49C39";
+            public const string Name = "SERVICE_WOREKR";
+            public const string FacilitatorId = default;
+            public const string Merchants = default;
+        }
         public static class NewtonsoftSerializer
         {
             public static JsonSerializerSettings Strategy()

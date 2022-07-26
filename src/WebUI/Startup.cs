@@ -116,14 +116,7 @@ namespace ZenAchitecture.WebUI
 
             #endregion Open api  
 
-            services.AddLocalization(o =>
-            {
-                // We will put our translations in a folder called Resources
-                o.ResourcesPath = "Resources";
-            });
-            services.AddSingleton<IStringLocalizerFactory, JsonStringLocalizerFactory>();
-            services.AddSingleton<IStringLocalizer, JsonStringLocalizer>();
-            CultureInfo.CurrentCulture = new CultureInfo(Constants.SystemCultureNames.Georgian);
+            
 
             services.AddCors(options =>
             {

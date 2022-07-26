@@ -2,19 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <RootNamespace>ZenAchitecture.Application</RootNamespace>
-    <AssemblyName>ZenAchitecture.Application</AssemblyName>
-    <ApplicationIcon />
-    <OutputType>Library</OutputType>
-    <StartupObject />
-    <CodeAnalysisRuleSet>..\..\.sonarlint\candidate-management-admin-testcsharp.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Compile Remove="Geography\**" />
-    <EmbeddedResource Remove="Geography\**" />
-    <None Remove="Geography\**" />
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Askmethat.Aspnet.JsonLocalizer" Version="3.1.1" />
@@ -36,8 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Application.Shared\Application.Shared.csproj" />
-    <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
+    <ProjectReference Include="..\Infrastructure.Shared\Infrastructure.Shared.csproj" />
   </ItemGroup>
-
+  
 </Project>

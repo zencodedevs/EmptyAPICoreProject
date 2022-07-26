@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Domain.Shared;
+using Microsoft.Extensions.DependencyInjection;
 using Zen.Domain;
 
 namespace ZenAchitecture.Domain
@@ -7,8 +8,8 @@ namespace ZenAchitecture.Domain
     {
         public static IServiceCollection AddDomain(this IServiceCollection services)
         {
-             
-             services.AddZenDomain();
+
+            services.AddDomainShared();
 
             return services;
         }

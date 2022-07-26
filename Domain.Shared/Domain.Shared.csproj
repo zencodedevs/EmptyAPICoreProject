@@ -1,10 +1,7 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <RootNamespace>ZenAchitecture.Domain</RootNamespace>
-    <AssemblyName>ZenAchitecture.Domain</AssemblyName>
-    <CodeAnalysisRuleSet>..\..\.sonarlint\candidate-management-admin-testcsharp.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
 
   <ItemGroup>
@@ -15,13 +12,5 @@
     <PackageReference Include="Zen.Domain" Version="1.0.63" />
     <PackageReference Include="Zen.MultiTenancy" Version="1.0.56" />
   </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\Domain.Shared\Domain.Shared.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Common\" />
-  </ItemGroup>
-
+  
 </Project>

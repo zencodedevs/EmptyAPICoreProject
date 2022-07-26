@@ -14,18 +14,18 @@ namespace ZenAchitecture.Application.Common.Behaviours
         private readonly ILogger<TRequest> _logger;
         private readonly ICurrentUserService _currentUserService;
         private readonly IConfiguration _configuration;
-        private readonly IIdentityService _identityService;
+     
 
          
 
         public PerformanceBehaviour(ILogger<TRequest> logger, ICurrentUserService currentUserService,
-            IIdentityService identityService, IConfiguration configuration)
+              IConfiguration configuration)
         {
             _timer = new Stopwatch();
             _logger = logger;
             _configuration = configuration;
             _currentUserService = currentUserService;
-            _identityService = identityService;
+            
         }
 
         public async Task<TResponse> Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate<TResponse> next)
@@ -44,12 +44,7 @@ namespace ZenAchitecture.Application.Common.Behaviours
             {
                 var requestName = typeof(TRequest).Name;
                 var userId = _currentUserService.UserId ?? string.Empty;
-                var userName = string.Empty;
-
-                if (!string.IsNullOrEmpty(userId))
-                {
-                    userName = await _identityService.GetUserNameAsync(userId);
-                }
+                var userName = "APP USER";
 
                 _logger.LogWarning("ZenAchitecture Long Running Request: {Name} ({ElapsedMilliseconds} milliseconds) {@UserId} {@UserName} {@Request}",
                     requestName, elapsedMilliseconds, userId, userName, request);

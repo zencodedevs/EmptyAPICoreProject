@@ -1,21 +1,9 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <RootNamespace>ZenAchitecture.Infrastructure</RootNamespace>
-    <AssemblyName>ZenAchitecture.Infrastructure</AssemblyName>
-    <CodeAnalysisRuleSet>..\..\.sonarlint\candidate-management-admin-testcsharp.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Compile Remove="Files\**" />
-    <Compile Remove="Interfaces\**" />
-    <EmbeddedResource Remove="Files\**" />
-    <EmbeddedResource Remove="Interfaces\**" />
-    <None Remove="Files\**" />
-    <None Remove="Interfaces\**" />
-  </ItemGroup>
-
+  
   <ItemGroup>
     <PackageReference Include="CsvHelper" Version="15.0.10" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
@@ -29,16 +17,9 @@
     <PackageReference Include="Zen.EventProcessor" Version="1.0.70" />
     <PackageReference Include="Zen.Infrastructure" Version="1.0.62" />
   </ItemGroup>
-
+  
   <ItemGroup>
-    <ProjectReference Include="..\..\Infrastructure.Shared\Infrastructure.Shared.csproj" />
-    <ProjectReference Include="..\Domain\Domain.csproj" />
+    <ProjectReference Include="..\Domain.Shared\Domain.Shared.csproj" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Migrations\" />
-    <Folder Include="Persistence\Configurations\" />
-    <Folder Include="Services\" />
-  </ItemGroup>
-
+  
 </Project>
