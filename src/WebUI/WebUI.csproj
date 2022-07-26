@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <RootNamespace>ZenAchitecture.WebUIAdmin</RootNamespace>
-    <AssemblyName>ZenAchitecture.WebUIAdmin</AssemblyName>
+    <RootNamespace>ZenAchitecture.WebUI</RootNamespace>
+    <AssemblyName>ZenAchitecture.WebUI</AssemblyName>
     <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
     <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
     <IsPackable>true</IsPackable>

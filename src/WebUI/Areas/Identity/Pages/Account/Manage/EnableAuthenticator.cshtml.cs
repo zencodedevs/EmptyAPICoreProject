@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 using ZenAchitecture.Domain.Shared.Entities;
 
-namespace ZenAchitecture.WebUIAdmin.Areas.Identity.Pages.Account.Manage
+namespace ZenAchitecture.WebUI.Areas.Identity.Pages.Account.Manage
 {
     public class EnableAuthenticatorModel : PageModel
     {
@@ -149,7 +149,7 @@ namespace ZenAchitecture.WebUIAdmin.Areas.Identity.Pages.Account.Manage
         {
             return string.Format(
                 AuthenticatorUriFormat,
-                _urlEncoder.Encode("ZenAchitecture.WebUIAdmin"),
+                _urlEncoder.Encode("ZenAchitecture.WebUI"),
                 _urlEncoder.Encode(email),
                 unformattedKey);
         }

@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using ZenAchitecture.Domain.Shared.Entities;
 
-namespace ZenAchitecture.WebUIAdmin.Areas.Identity.Pages.Account.Manage
+namespace ZenAchitecture.WebUI.Areas.Identity.Pages.Account.Manage
 {
     public partial class EmailModel : PageModel
     {
