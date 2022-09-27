@@ -30,8 +30,8 @@ namespace ZenAchitecture.Application.Common.Behaviours
             {
                 var requestName = typeof(TRequest).Name;
 
-                _logger.LogError(ex, "ZenAchitecture Request: Unhandled Exception for Request {Name} {@Request}", requestName, request);
-
+                _logger.LogError(ex, "ZenAchitecture Request: Unhandled Exception for Request {Name} {@Request} {@StackTrace}", requestName, request, ex.StackTrace);
+               
                 throw;
             }
         }

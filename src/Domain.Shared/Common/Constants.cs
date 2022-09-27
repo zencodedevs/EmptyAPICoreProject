@@ -45,7 +45,7 @@ namespace ZenAchitecture.Domain.Shared.Common
         public struct Nlog
         {
             //sql server signature
-            public const string WebUiDbRegisterClause = "insert into  Logs([When],[Message],[Level],[Exception],[Trace],[Logger],[Channel])VALUES (getdate(),@msg,@level,@exception,@trace,@logger,'WebUI')";
+            public const string WebUiDbRegisterClause = "insert into  Logs([When],[Message],[Level],[Exception],[Trace],[Logger],[Channel],[Url])VALUES (getdate(),@msg,@level,@exception,@trace,@logger,'WebUI',@url)";
             public const string WorkerDbRegisterClause = "insert into  Logs([When],[Message],[Level],[Exception],[Trace],[Logger],[Channel])VALUES (getdate(),@msg,@level,@exception,@trace,@logger,'ServiceWorker')";
         }
         public struct ServiceWorkerUser
