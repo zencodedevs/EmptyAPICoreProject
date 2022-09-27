@@ -29,6 +29,9 @@ namespace ZenAchitecture.Application
 
             services.TryAddTransient(typeof(IPipelineBehavior<,>), typeof(AuthorizationBehaviour<,>));
             services.TryAddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehaviour<,>));
+            services.TryAddTransient(typeof(IPipelineBehavior<,>), typeof(UnhandledExceptionBehaviour<,>));
+            services.TryAddTransient(typeof(IPipelineBehavior<,>), typeof(PerformanceBehaviour<,>));
+
 
             //app services
             services.AddTransient<IActivityService, ActivityService>();
