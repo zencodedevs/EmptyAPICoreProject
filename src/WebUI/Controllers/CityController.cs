@@ -27,7 +27,7 @@ namespace ZenAchitecture.WebUI.Controllers.V1
 
         [HttpGet]
         [Route(nameof(GetCities))]
-        public async Task<List<CityDto>> GetCities() => await Mediator.Send(new GetCitiesQuery());
+        public async Task< IEnumerable<CityDto> > GetCities() => await Mediator.Send(new GetCitiesQuery());
 
         [HttpPost]
         [Route(nameof(CreateCity))]
