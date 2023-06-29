@@ -10,17 +10,21 @@ namespace ZenAchitecture.Domain.Shared.Entities.Geography
     public class City : Entity, IHasDomainEvent
     {
 
+        protected City() { }
+
         public string Name { get; private set; }
 
         [NotMapped]
         public List<DomainEvent> DomainEvents { get; set; }
 
-        public City Create(string name)
+        public static City Create(string name)
         {
-            Name = name;
-            DomainEvents ??= new List<DomainEvent>();
-            DomainEvents.Add(new CityCreatedEvent(this, Guid.NewGuid()));
-            return this;
+            var city = new City();
+
+            city. Name = name;
+            city.DomainEvents ??= new List<DomainEvent>();
+            city.DomainEvents.Add(new CityCreatedEvent(city, Guid.NewGuid()));
+            return city;
         }
 
 

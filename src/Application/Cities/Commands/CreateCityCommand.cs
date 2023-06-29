@@ -22,8 +22,7 @@ namespace ZenAchitecture.Application.Account.Cities.Commands
 
         public async Task<int> Handle(CreateCityCommand request, CancellationToken cancellationToken)
         {
-            var city = new City();
-            city.Create(request.Name);
+            var city = City.Create(request.Name);
             return (await _repository.InsertAsync(city, autoSave: true, cancellationToken: cancellationToken)).Id;
         }
     }
