@@ -14,6 +14,15 @@
         "operationId": "City_ReadCity",
         "parameters": [
           {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-position": 1
+          },
+          {
             "type": "string",
             "name": "x-sys-language",
             "in": "header",

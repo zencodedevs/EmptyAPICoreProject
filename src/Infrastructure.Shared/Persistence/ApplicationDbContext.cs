@@ -2,7 +2,6 @@
 using ZenAchitecture.Domain.Shared.Entities;
 using ZenAchitecture.Domain.Shared.Entities.Geography;
 using ZenAchitecture.Domain.Shared.Interfaces;
-using IdentityServer4.EntityFramework.Options;
 using Microsoft.AspNetCore.ApiAuthorization.IdentityServer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
@@ -19,6 +18,7 @@ using Zen.Domain.Interfaces;
 using Zen.EventProcessor;
 using Zen.Infrastructure.Interfaces;
 using Zen.Domain.Entities.AuditingLog;
+using Duende.IdentityServer.EntityFramework.Options;
 
 namespace ZenAchitecture.Infrastructure.Shared.Persistence
 {

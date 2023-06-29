@@ -16,7 +16,7 @@ import { HttpClient, HttpHeaders, HttpResponse, HttpResponseBase } from '@angula
 export const API_BASE_URL = new InjectionToken<string>('API_BASE_URL');
 
 export interface ICityClient {
-    readCity(): Observable<CityDto>;
+    readCity(id: number | undefined): Observable<CityDto>;
     getCities(): Observable<CityDto[]>;
     createCity(command: CreateCityCommand): Observable<number>;
     updateCity(command: UpdateCityCommand): Observable<number>;
@@ -36,8 +36,12 @@ export class CityClient implements ICityClient {
         this.baseUrl = baseUrl !== undefined && baseUrl !== null ? baseUrl : "";
     }
 
-    readCity(): Observable<CityDto> {
-        let url_ = this.baseUrl + "/api/v1/City/ReadCity";
+    readCity(id: number | undefined): Observable<CityDto> {
+        let url_ = this.baseUrl + "/api/v1/City/ReadCity?";
+        if (id === null)
+            throw new Error("The parameter 'id' cannot be null.");
+        else if (id !== undefined)
+            url_ += "id=" + encodeURIComponent("" + id) + "&";
         url_ = url_.replace(/[?&]$/, "");
 
         let options_ : any = {

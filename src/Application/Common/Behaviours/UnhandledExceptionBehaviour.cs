@@ -7,7 +7,7 @@ using Zen.Common.Exception;
 
 namespace ZenAchitecture.Application.Common.Behaviours
 {
-    public class UnhandledExceptionBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
+    public class UnhandledExceptionBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse> where TRequest : MediatR.IRequest<TResponse>
     {
         private readonly ILogger<TRequest> _logger;
 
@@ -16,7 +16,7 @@ namespace ZenAchitecture.Application.Common.Behaviours
             _logger = logger;
         }
 
-        public async Task<TResponse> Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate<TResponse> next)
+        public async Task<TResponse> Handle(TRequest request, RequestHandlerDelegate<TResponse> next, CancellationToken cancellationToken)
         {
             try
             {
@@ -35,5 +35,8 @@ namespace ZenAchitecture.Application.Common.Behaviours
                 throw;
             }
         }
+
+        
+        
     }
 }

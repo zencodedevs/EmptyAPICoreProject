@@ -8,15 +8,15 @@ using System.Threading.Tasks;
 
 namespace ZenAchitecture.Application.Common.Behaviours
 {
-    public class PerformanceBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
+    public class PerformanceBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse> where TRequest : MediatR.IRequest<TResponse>
     {
         private readonly Stopwatch _timer;
         private readonly ILogger<TRequest> _logger;
         private readonly ICurrentUserService _currentUserService;
         private readonly IConfiguration _configuration;
-     
 
-         
+
+
 
         public PerformanceBehaviour(ILogger<TRequest> logger, ICurrentUserService currentUserService,
               IConfiguration configuration)
@@ -25,10 +25,10 @@ namespace ZenAchitecture.Application.Common.Behaviours
             _logger = logger;
             _configuration = configuration;
             _currentUserService = currentUserService;
-            
+
         }
 
-        public async Task<TResponse> Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate<TResponse> next)
+        public async Task<TResponse> Handle(TRequest request, RequestHandlerDelegate<TResponse> next, CancellationToken cancellationToken)
         {
             _timer.Start();
 
@@ -52,5 +52,7 @@ namespace ZenAchitecture.Application.Common.Behaviours
 
             return response;
         }
+
+
     }
 }

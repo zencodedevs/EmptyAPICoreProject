@@ -12,7 +12,7 @@ using ZenAchitecture.Domain.Shared.Interfaces;
 
 namespace ZenAchitecture.Application.Common.Behaviours
 {
-    public class AuthorizationBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
+    public class AuthorizationBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse> where TRequest : MediatR.IRequest<TResponse>
     {
         private readonly ICurrentUserService _currentUserService;
         private readonly IIdentityService _identityService;
@@ -25,7 +25,8 @@ namespace ZenAchitecture.Application.Common.Behaviours
             _identityService = identityService;
         }
 
-        public async Task<TResponse> Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate<TResponse> next)
+
+        public async Task<TResponse> Handle(TRequest request, RequestHandlerDelegate<TResponse> next, CancellationToken cancellationToken)
         {
             var authorizeAttributes = request.GetType().GetCustomAttributes<AuthorizeAttribute>();
 
@@ -67,7 +68,7 @@ namespace ZenAchitecture.Application.Common.Behaviours
                 var authorizeAttributesWithPolicies = authorizeAttributes.Where(a => !string.IsNullOrWhiteSpace(a.Policy));
                 if (authorizeAttributesWithPolicies.Any())
                 {
-                    foreach(var policy in authorizeAttributesWithPolicies.Select(a => a.Policy))
+                    foreach (var policy in authorizeAttributesWithPolicies.Select(a => a.Policy))
                     {
                         var authorized = await _identityService.AuthorizeAsync(_currentUserService.UserId, policy);
 

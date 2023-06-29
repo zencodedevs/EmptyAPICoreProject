@@ -23,11 +23,11 @@ namespace ZenAchitecture.WebUI.Controllers.V1
 
         [HttpGet]
         [Route(nameof(ReadCity))]
-        public async Task<CityDto> ReadCity() => await Mediator.Send(new GetCityQuery());
+        public async Task<CityDto> ReadCity(int id) => await Mediator.Send(new GetCityQuery { Id = id });
 
         [HttpGet]
         [Route(nameof(GetCities))]
-        public async Task< IEnumerable<CityDto> > GetCities() => await Mediator.Send(new GetCitiesQuery());
+        public async Task<IEnumerable<CityDto>> GetCities() => await Mediator.Send(new GetCitiesQuery());
 
         [HttpPost]
         [Route(nameof(CreateCity))]
