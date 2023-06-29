@@ -29,10 +29,10 @@
     <PackageReference Include="RestSharp" Version="106.13.0" />
     <PackageReference Include="TimeZoneConverter" Version="3.5.0" />
     <PackageReference Include="Twilio" Version="5.68.2" />
-    <PackageReference Include="Zen.Application" Version="7.0.56" />
+    <PackageReference Include="Zen.Application" Version="7.0.59" />
     <PackageReference Include="Zen.Common" Version="7.0.57" />
-    <PackageReference Include="Zen.SendGrid" Version="1.0.34" />
-    <PackageReference Include="Zen.SendGrid.Extensions.DependencyInjection" Version="1.0.34" />
+    <PackageReference Include="Zen.SendGrid" Version="1.0.35" />
+    <PackageReference Include="Zen.SendGrid.Extensions.DependencyInjection" Version="1.0.35" />
   </ItemGroup>
 
   <ItemGroup>
