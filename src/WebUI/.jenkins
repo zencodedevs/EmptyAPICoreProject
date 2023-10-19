@@ -1,5 +1,5 @@
 ﻿# ეს კომენტარი არ წაშალოთ
-BuildCMD=dotnet publish .\\src\\WebUIAdmin\\WebUIAdmin.csproj -f net5.0 /p:Platform="Any CPU" --configuration Release  /p:EnvironmentName="Qa" --output build
+BuildCMD=dotnet publish .\\src\\WebUIAdmin\\WebUIAdmin.csproj -f net7.0 /p:Platform="Any CPU" --configuration Release  /p:EnvironmentName="Qa" --output build
 BuildOutput=build
 WebSiteName=candidate.zencode.io
 DestinationRoot=C:\\inetpub

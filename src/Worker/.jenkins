@@ -1,0 +1,4 @@
+# ეს კომენტარი არ წაშალოთ
+BuildCMD=dotnet publish Worker.csproj /p:Platform="Any CPU" /p:TargetFramework=net7.0 /p:RuntimeIdentifier=win-x64 -c Release  /p:EnvironmentName="Qa" --output build
+BuildOutput=build
+NotifyMail = beka.nasuashvili@altcom.io
