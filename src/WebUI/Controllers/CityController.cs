@@ -6,6 +6,8 @@ using ZenAchitecture.Application.Account.Cities.Queries;
 using ZenAchitecture.Application.Account.Cities.Commands;
 using Zen.Mvc;
 using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Authorization;
+
 
 namespace ZenAchitecture.WebUI.Controllers.V1
 {
@@ -25,7 +27,7 @@ namespace ZenAchitecture.WebUI.Controllers.V1
         [Route(nameof(ReadCity))]
         public async Task<CityDto> ReadCity(int id) => await Mediator.Send(new GetCityQuery { Id = id });
 
-        [HttpGet]
+        [HttpGet, Authorize]
         [Route(nameof(GetCities))]
         public async Task<IEnumerable<CityDto>> GetCities() => await Mediator.Send(new GetCitiesQuery());
 

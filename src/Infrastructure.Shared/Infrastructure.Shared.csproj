@@ -1,22 +1,25 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
   </PropertyGroup>
   
   <ItemGroup>
     <PackageReference Include="CsvHelper" Version="30.0.1" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.1.0" />
+    <PackageReference Include="System.Linq.Dynamic.Core" Version="1.4.0" />
+
+
     <PackageReference Include="Microsoft.AspNetCore.ApiAuthorization.IdentityServer" Version="7.0.8" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="7.0.8" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="7.0.8" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="7.0.8" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.8" />
-    <PackageReference Include="System.Linq.Dynamic.Core" Version="1.3.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="8.0.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.6" />
 
-    <PackageReference Include="Zen.Bog.Ecommerce" Version="7.1.15" />
-    <PackageReference Include="Zen.EventProcessor" Version="7.1.74" />
-    <PackageReference Include="Zen.Infrastructure" Version="7.1.69" />
+
+    <PackageReference Include="Zen.Bog.Ecommerce" Version="8.1.15" />
+    <PackageReference Include="Zen.EventProcessor" Version="8.1.74" />
+    <PackageReference Include="Zen.Infrastructure" Version="8.1.69" />
   </ItemGroup>
   
   <ItemGroup>
